@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from '../../interfaces/product';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-product',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  @Input() product: Product;
+
+  constructor(private snackBar: MatSnackBar) {
+  }
 
   ngOnInit() {
   }
 
+
+  mostrarMensaje() {
+    this.snackBar.open('Se agreo el producto ' + this.product.name, 'OK', {
+      duration: 2000,
+    });
+  }
 }

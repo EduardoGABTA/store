@@ -1,8 +1,12 @@
-.fondo {
+.login {
   background-image: url("src/assets/img/ciu.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 600px;
+}
+.backGround {
   height: -webkit-fill-available;
 }
+

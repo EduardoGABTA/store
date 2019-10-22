@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="col-md-12 fondo">
+  <div class="row card-group">
+    <div class="col-md-3 mt-2" *ngFor="let product of products">
+      <app-product [product]="product"></app-product>
+    </div>
+  </div>
+</div>

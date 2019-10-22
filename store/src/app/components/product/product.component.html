@@ -1,1 +1,20 @@
-<p>product works!</p>
+<mat-card class="example-card text-center">
+  <div class="row">
+    <button mat-button class="text-primary"><i class="fa fa-info-circle fa-2x text-primary"></i></button>
+  </div>
+  <mat-card-header>
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-subtitle>{{product.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img style="width: 200px" mat-card-image src="../../../assets/img/logo.png" alt="logo">
+  <mat-card-content>
+    <p>
+      {{product.description}}
+    </p>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+     <button mat-button class="text-info" (click)="mostrarMensaje()"><i class="fa fa-cart-plus fa-2x"></i>Agregar</button>
+     <button mat-button class="text-danger"><i class="fa fa-cart-arrow-down fa-2x"></i>Borrar</button>
+  </mat-card-actions>
+</mat-card>
