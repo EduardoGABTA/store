@@ -1,0 +1,16 @@
+<div class="row justify-content-between">
+  <h2>{{product.name}}</h2>
+  <i class="fa fa-times-circle fa-2x" (click)="onNoClick()"></i>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-content class="justify-content-center">
+  <div class="col-md 12">
+    <img src="../../../assets/img/logo.png" alt="">
+    <p><strong>Descripcción del producto:</strong> {{product.description}}</p>
+    <h1>Precio: $ {{product.price}}</h1>
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions class="justify-content-center">
+  <button mat-button mat-dialog-close (click)="onNoClick()">Cerrar</button>
+</mat-dialog-actions>

@@ -12,12 +12,24 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatDividerModule, MatIconModule, MatMenuModule, MatSnackBarModule} from '@angular/material';
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatIconModule,
+  MatMenuModule,
+  MatSnackBarModule
+} from '@angular/material';
 import { LoginComponent } from './shared/login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {ReactiveFormsModule} from '@angular/forms';
+import { InfoProductComponent } from './shared/modals/info-product/info-product.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +43,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
+    InfoProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +57,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     AngularFontAwesomeModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    MatTabsModule,
+    DragDropModule,
+    MatBadgeModule,
+  ],
+  entryComponents: [
+    InfoProductComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,31 @@
 <div class="col-md-12 fondo">
-  <div class="row card-group">
-    <div class="col-md-3 mt-2" *ngFor="let product of products">
-      <app-product [product]="product"></app-product>
+  <div class="row">
+    <div class="col-md-9">
+      <div cdkDropList #disponibles="cdkDropList" class="example-list" [cdkDropListData]="products"
+           style="display: flex; flex-wrap: wrap"
+           [cdkDropListConnectedTo]="[selected]"
+           (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let product of products" cdkDrag>
+          <app-product [product]="product" (uuidProduct)="addProduct($event)"></app-product>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center mt-2" style="color: white">
+      <p>
+        Productos seleccionados
+        <mat-icon matBadge="{{products2.length}}" matBadgeColor="warn"></mat-icon>
+      </p>
+      <div cdkDropList #selected="cdkDropList" class="example-list" [cdkDropListData]="products2"
+           [cdkDropListConnectedTo]="[disponibles]"
+           (cdkDropListDropped)="drop($event)">
+        <div class="drop">
+          <strong class="text-danger">Arrastra aqui</strong>
+        </div>
+      </div>
+      <div class="col-md-12" *ngFor="let prod of products2">
+        {{prod | json}}
+      </div>
     </div>
   </div>
 </div>
+
